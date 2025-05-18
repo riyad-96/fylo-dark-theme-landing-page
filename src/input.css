@@ -53,7 +53,6 @@
   --btn-bg: linear-gradient(to right, var(--teal-200), var(--cyan-500));
 }
 
-
 @theme {
   --font-body: 'Open sans';
   --font-heading: Raleway;
@@ -61,6 +60,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   h1,
   h2,
   h3,
@@ -86,4 +88,8 @@
 
 .grid-el-h3 {
   @apply text-base font-bold mt-6 mb-2;
+}
+
+.user-card {
+  @apply grid gap-4 bg-(--navy-800) p-6 max-md:max-w-[380px] max-md:mx-auto max-md:my-8 rounded-sm shadow-lg shadow-white/3 [&>div]:flex [&>div]:gap-4 [&>div]:items-center [&>div>div>h4]:font-bold [&>div>div>span]:text-xs [&>div>div]:grid;
 }
