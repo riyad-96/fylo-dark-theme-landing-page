@@ -2,4 +2,4 @@
 
 ![Design preview for the Fylo dark theme landing page challenge](preview.jpg)
 
-## Completed first tailwindcss project.
+- Completed first tailwindcss project.
