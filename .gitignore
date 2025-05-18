@@ -39,5 +39,6 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 
+#project files
 /design
 /style-guide.md
