@@ -1,287 +1,244 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <title>Frontend Mentor | Fylo landing page with dark theme and features grid</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <title>Frontend Mentor | Fylo landing page with dark theme and features grid</title>
+    <link rel="preload" href="./assets/fonts/open-sans-v40-latin-400.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/fonts/open-sans-v40-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/fonts/raleway-v34-latin-400.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/fonts/raleway-v34-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
 
-  <link rel="preload" href="./assets/fonts/open-sans-v40-latin-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="./assets/fonts/open-sans-v40-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="./assets/fonts/raleway-v34-latin-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="./assets/fonts/raleway-v34-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/main.css" />
+    <script src="./app.js" defer></script>
+  </head>
 
-  <link rel="stylesheet" href="./src/main.css">
-  <script src="./app.js" defer></script>
-</head>
+  <body class="bg-(--navy-850) min-h-screen text-white">
+    <!-- Header -->
+    <header class="center-layout flex items-center justify-between px-6 pt-8 sm:pt-16">
+      <svg class="w-(--fluid-logo)" viewBox="0 0 176 52" xmlns="http://www.w3.org/2000/svg">
+        <g fill="currentColor" fill-rule="evenodd">
+          <path
+            d="M0 16.372v.128l29.754 13.764 29.859-13.811v-.035L29.754 2.608 0 16.372zm10.727.064l19.028-8.802 19.03 8.802-19.031 8.801-19.027-8.801zM29.754 35.61L0 22.052v5.014l29.754 13.59L59.613 27.02v-5.015L29.754 35.61zm0 10.17L0 32.22v5.015l29.754 13.591L59.613 37.19v-5.014L29.754 45.78zM169.216 26.22a8.564 8.564 0 0 0-2.285-5.892 7.675 7.675 0 0 0-2.473-1.768 7.259 7.259 0 0 0-3.015-.636 7.259 7.259 0 0 0-3.015.636 7.674 7.674 0 0 0-2.473 1.768 8.565 8.565 0 0 0-2.285 5.893 8.564 8.564 0 0 0 2.285 5.893 7.674 7.674 0 0 0 2.473 1.767 7.258 7.258 0 0 0 3.015.637 7.258 7.258 0 0 0 3.015-.637 7.675 7.675 0 0 0 2.473-1.767 8.563 8.563 0 0 0 2.285-5.893zm6.784 0c0 2.044-.377 3.937-1.13 5.681a13.849 13.849 0 0 1-3.11 4.526c-1.319 1.273-2.866 2.279-4.64 3.017-1.775.739-3.667 1.108-5.677 1.108s-3.894-.37-5.653-1.108a14.659 14.659 0 0 1-4.617-3.04 14.116 14.116 0 0 1-3.11-4.55c-.753-1.744-1.13-3.622-1.13-5.633 0-1.98.385-3.842 1.154-5.586a14.718 14.718 0 0 1 3.133-4.573 14.457 14.457 0 0 1 4.617-3.064c1.759-.739 3.627-1.108 5.606-1.108 2.01 0 3.902.369 5.677 1.108 1.774.738 3.321 1.744 4.64 3.017 1.32 1.272 2.356 2.789 3.11 4.549.753 1.76 1.13 3.645 1.13 5.657zm-31.422 13.483a9.087 9.087 0 0 1-1.814.613 9.217 9.217 0 0 1-2.096.236c-1.005 0-1.971-.134-2.898-.4a6.347 6.347 0 0 1-2.426-1.297c-.69-.597-1.24-1.375-1.649-2.334-.408-.958-.612-2.113-.612-3.465V.717h6.925v31.16c0 1.132.228 1.91.683 2.334.456.425.997.637 1.625.637.786 0 1.54-.236 2.262-.707v5.562zM130.02 12.55l-12.249 32.386c-.91 2.42-2.104 4.164-3.58 5.233-1.476 1.068-3.235 1.603-5.277 1.603a8.4 8.4 0 0 1-1.036-.071 7.784 7.784 0 0 1-1.083-.212l-2.262-6.317a8.974 8.974 0 0 0 1.65.59 6.61 6.61 0 0 0 1.6.211c1.069 0 2.042-.243 2.922-.73.879-.488 1.554-1.391 2.025-2.711l.943-2.734-10.506-27.248h7.396l6.266 17.536 5.889-17.536h7.302zm-28.502-4.102H83.806v8.769h17.478v5.94H83.806v16.688h-7.16V2.179h24.873v6.27z"
+          />
+        </g>
+      </svg>
 
-<body class="bg-(--navy-850) text-white min-h-screen">
+      <nav class="font-heading flex gap-8 text-base *:py-2 *:hover:opacity-100 *:sm:opacity-60 sm:*:hover:underline md:gap-14">
+        <a href="#">Features</a>
+        <a href="#">Team</a>
+        <a href="#">Sign In</a>
+      </nav>
+    </header>
 
-  <!-- Header -->
-  <header class="center-layout flex items-center justify-between pt-8 sm:pt-16 px-6">
-    <svg class="w-(--fluid-logo)" viewBox="0 0 176 52" xmlns="http://www.w3.org/2000/svg">
-      <g fill="currentColor" fill-rule="evenodd">
-        <path
-          d="M0 16.372v.128l29.754 13.764 29.859-13.811v-.035L29.754 2.608 0 16.372zm10.727.064l19.028-8.802 19.03 8.802-19.031 8.801-19.027-8.801zM29.754 35.61L0 22.052v5.014l29.754 13.59L59.613 27.02v-5.015L29.754 35.61zm0 10.17L0 32.22v5.015l29.754 13.591L59.613 37.19v-5.014L29.754 45.78zM169.216 26.22a8.564 8.564 0 0 0-2.285-5.892 7.675 7.675 0 0 0-2.473-1.768 7.259 7.259 0 0 0-3.015-.636 7.259 7.259 0 0 0-3.015.636 7.674 7.674 0 0 0-2.473 1.768 8.565 8.565 0 0 0-2.285 5.893 8.564 8.564 0 0 0 2.285 5.893 7.674 7.674 0 0 0 2.473 1.767 7.258 7.258 0 0 0 3.015.637 7.258 7.258 0 0 0 3.015-.637 7.675 7.675 0 0 0 2.473-1.767 8.563 8.563 0 0 0 2.285-5.893zm6.784 0c0 2.044-.377 3.937-1.13 5.681a13.849 13.849 0 0 1-3.11 4.526c-1.319 1.273-2.866 2.279-4.64 3.017-1.775.739-3.667 1.108-5.677 1.108s-3.894-.37-5.653-1.108a14.659 14.659 0 0 1-4.617-3.04 14.116 14.116 0 0 1-3.11-4.55c-.753-1.744-1.13-3.622-1.13-5.633 0-1.98.385-3.842 1.154-5.586a14.718 14.718 0 0 1 3.133-4.573 14.457 14.457 0 0 1 4.617-3.064c1.759-.739 3.627-1.108 5.606-1.108 2.01 0 3.902.369 5.677 1.108 1.774.738 3.321 1.744 4.64 3.017 1.32 1.272 2.356 2.789 3.11 4.549.753 1.76 1.13 3.645 1.13 5.657zm-31.422 13.483a9.087 9.087 0 0 1-1.814.613 9.217 9.217 0 0 1-2.096.236c-1.005 0-1.971-.134-2.898-.4a6.347 6.347 0 0 1-2.426-1.297c-.69-.597-1.24-1.375-1.649-2.334-.408-.958-.612-2.113-.612-3.465V.717h6.925v31.16c0 1.132.228 1.91.683 2.334.456.425.997.637 1.625.637.786 0 1.54-.236 2.262-.707v5.562zM130.02 12.55l-12.249 32.386c-.91 2.42-2.104 4.164-3.58 5.233-1.476 1.068-3.235 1.603-5.277 1.603a8.4 8.4 0 0 1-1.036-.071 7.784 7.784 0 0 1-1.083-.212l-2.262-6.317a8.974 8.974 0 0 0 1.65.59 6.61 6.61 0 0 0 1.6.211c1.069 0 2.042-.243 2.922-.73.879-.488 1.554-1.391 2.025-2.711l.943-2.734-10.506-27.248h7.396l6.266 17.536 5.889-17.536h7.302zm-28.502-4.102H83.806v8.769h17.478v5.94H83.806v16.688h-7.16V2.179h24.873v6.27z" />
-      </g>
-    </svg>
+    <main>
+      <!-- Hero section -->
+      <section class="sm:pb-30 lg:pb-50 relative grid justify-items-center px-6 pb-20 pt-10 md:pb-40">
+        <picture>
+          <source media="(width > 768px)" srcset="./assets/images/bg-curvy-desktop.svg" />
+          <img class="-z-1 absolute bottom-0 left-0 w-full" src="./assets/images/bg-curvy-mobile.svg" alt="background image" />
+        </picture>
 
-    <nav
-      class="flex gap-8 md:gap-14 font-heading text-base *:py-2 *:sm:opacity-60 *:hover:opacity-100 sm:*:hover:underline">
-      <a href="#">Features</a>
-      <a href="#">Team</a>
-      <a href="#">Sign In</a>
-    </nav>
-  </header>
+        <div class="max-w-[320px] sm:max-w-[690px]">
+          <img class="pb-4 pt-6 sm:pt-12" src="./assets/images/illustration-intro.png" alt="intro image" />
 
-  <main>
-    <!-- Hero section -->
-    <section class="relative grid justify-items-center px-6 pt-10 pb-20 sm:pb-30 md:pb-40 lg:pb-50">
-      <picture>
-        <source media="(width > 768px)" srcset="./assets/images/bg-curvy-desktop.svg">
-        <img class="w-full absolute left-0 bottom-0 -z-1" src="./assets/images/bg-curvy-mobile.svg"
-          alt="background image">
-      </picture>
+          <div class="text-center">
+            <h1 class="text-(length:--fluid-heading) font-bold">All your files in one secure location, accessible anywhere.</h1>
 
-      <div class="max-w-[320px] sm:max-w-[690px]">
-        <img class="pt-6 pb-4 sm:pt-12" src="./assets/images/illustration-intro.png" alt="intro image">
+            <p class="my-5 leading-relaxed sm:text-xl">Fylo stores all your most important files in one secure location. Access them wherever you need, share and collaborate with friends family, and co-workers.</p>
 
-        <div class="text-center">
-          <h1 class="text-(length:--fluid-heading) font-bold">All your files in one secure location, accessible
-            anywhere.
-          </h1>
-
-          <p class="my-5 leading-relaxed sm:text-xl">Fylo stores all your most important files in one secure location.
-            Access them
-            wherever you need, share and collaborate with friends family, and co-workers.</p>
-
-          <button id="get-started"
-            class="group text-base font-bold w-[280px] h-[50px] bg-linear-to-r from-(--teal-200) to-(--cyan-500) relative rounded-full overflow-hidden sm:cursor-pointer">
-            <span class="absolute inset-0 bg-white/40 opacity-0 group-hover:opacity-100 transition"></span>
-            Get Started
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- other sections -->
-    <div class="bg-(--navy-900)">
-      <!-- grid layout section -->
-      <section class="center-layout grid max-sm:justify-items-center gap-16 sm:grid-cols-2">
-
-        <div class="grid-el">
-          <img src="./assets/images/icon-access-anywhere.svg" alt="Access your files, anywhere">
-          <h3 class="grid-el-h3">Access your files, anywhere</h3>
-          <p class="sm:max-w-[380px]">The ability to use a smartphone, tablet, or computer to access your account means
-            your files follow you
-            everywhere.</p>
-        </div>
-
-        <div class="grid-el">
-          <img src="./assets/images/icon-security.svg" alt="Security you can trust">
-          <h3 class="grid-el-h3">Security you can trust</h3>
-          <p class="sm:max-w-[380px]">2-factor authentication and user-controlled encryption are just a couple of the
-            security features we allow
-            to help secure your files.</p>
-        </div>
-
-        <div class="grid-el">
-          <img src="./assets/images/icon-collaboration.svg" alt="Real-time collaboration">
-          <h3 class="grid-el-h3">Real-time collaboration</h3>
-          <p class="sm:max-w-[380px]">Securely share files and folders with friends, family and colleagues for live
-            collaboration. No email
-            attachments required.</p>
-        </div>
-
-        <div class="grid-el">
-          <img src="./assets/images/icon-any-file.svg" alt="Store any type of file">
-          <h3 class="grid-el-h3">Store any type of file</h3>
-          <p class="sm:max-w-[380px]">Whether you're sharing holidays photos or work documents, Fylo has you covered
-            allowing for all file types
-            to be securely stored and shared.</p>
-        </div>
-
-      </section>
-
-      <!-- productive section -->
-      <section class="mt-30 sm:mb-20 center-layout md:flex gap-10">
-        <img class="min-w-0 max-md:max-w-[320px] md:grow md:basis-0 mx-auto"
-          src="./assets/images/illustration-stay-productive.png" alt="stay productive">
-
-        <div class="md:grow md:basis-0 grid gap-4 content-center max-md:mt-8">
-          <h2 class="text-(length:--fluid-heading) font-bold">Stay productive, wherever you are</h2>
-
-          <p>Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage
-            needs.</p>
-
-          <p>Securely share files and folders with friends, family and colleagues for live collaboration. No email
-            attachments required.</p>
-
-          <a class="text-(--teal-200) flex items-center gap-2 pb-1 border-b-1 max-w-fit" href="#">
-            <span>See how Fylo works</span>
-            <img src="./assets/images/icon-arrow.svg" alt="arrow">
-          </a>
+            <button id="get-started" class="bg-linear-to-r from-(--teal-200) to-(--cyan-500) group relative h-[50px] w-[280px] overflow-hidden rounded-full text-base font-bold sm:cursor-pointer">
+              <span class="absolute inset-0 bg-white/40 opacity-0 transition group-hover:opacity-100"></span>
+              Get Started
+            </button>
+          </div>
         </div>
       </section>
 
-      <!-- testimonials -->
-      <div class="pt-20 center-layout md:grid md:grid-cols-3 md:gap-8 relative">
-        <div class="relative max-w-fit max-h-fit max-md:mx-auto">
-          <img class="absolute -top-[20px] max-md:w-[25px] md:-left-[10px] md:-top-[35px] h-auto"
-            src="./assets/images/bg-quotes.png" alt="quote">
-          <div class="user-card relative">
-            <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has
-              become a well-oiled collaboration machine.</p>
-            <div>
-              <img class="rounded-full" src="./assets/images/profile-1.jpg" width="40" height="40" alt="Satish Patel">
+      <!-- other sections -->
+      <div class="bg-(--navy-900)">
+        <!-- grid layout section -->
+        <section class="center-layout grid gap-16 max-sm:justify-items-center sm:grid-cols-2">
+          <div class="grid-el">
+            <img src="./assets/images/icon-access-anywhere.svg" alt="Access your files, anywhere" />
+            <h3 class="grid-el-h3">Access your files, anywhere</h3>
+            <p class="sm:max-w-[380px]">The ability to use a smartphone, tablet, or computer to access your account means your files follow you everywhere.</p>
+          </div>
+
+          <div class="grid-el">
+            <img src="./assets/images/icon-security.svg" alt="Security you can trust" />
+            <h3 class="grid-el-h3">Security you can trust</h3>
+            <p class="sm:max-w-[380px]">2-factor authentication and user-controlled encryption are just a couple of the security features we allow to help secure your files.</p>
+          </div>
+
+          <div class="grid-el">
+            <img src="./assets/images/icon-collaboration.svg" alt="Real-time collaboration" />
+            <h3 class="grid-el-h3">Real-time collaboration</h3>
+            <p class="sm:max-w-[380px]">Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required.</p>
+          </div>
+
+          <div class="grid-el">
+            <img src="./assets/images/icon-any-file.svg" alt="Store any type of file" />
+            <h3 class="grid-el-h3">Store any type of file</h3>
+            <p class="sm:max-w-[380px]">Whether you're sharing holidays photos or work documents, Fylo has you covered allowing for all file types to be securely stored and shared.</p>
+          </div>
+        </section>
+
+        <!-- productive section -->
+        <section class="mt-30 center-layout gap-10 sm:mb-20 md:flex">
+          <img class="mx-auto min-w-0 max-md:max-w-[320px] md:grow md:basis-0" src="./assets/images/illustration-stay-productive.png" alt="stay productive" />
+
+          <div class="grid content-center gap-4 max-md:mt-8 md:grow md:basis-0">
+            <h2 class="text-(length:--fluid-heading) font-bold">Stay productive, wherever you are</h2>
+
+            <p>Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.</p>
+
+            <p>Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required.</p>
+
+            <a class="text-(--teal-200) border-b-1 flex max-w-fit items-center gap-2 pb-1" href="#">
+              <span>See how Fylo works</span>
+              <img src="./assets/images/icon-arrow.svg" alt="arrow" />
+            </a>
+          </div>
+        </section>
+
+        <!-- testimonials -->
+        <div class="center-layout relative pt-20 md:grid md:grid-cols-3 md:gap-8">
+          <div class="relative max-h-fit max-w-fit max-md:mx-auto">
+            <img class="absolute -top-[20px] h-auto max-md:w-[25px] md:-left-[10px] md:-top-[35px]" src="./assets/images/bg-quotes.png" alt="quote" />
+            <div class="user-card relative">
+              <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</p>
               <div>
-                <h4>Satish Patel</h4>
+                <img class="rounded-full" src="./assets/images/profile-1.jpg" width="40" height="40" alt="Satish Patel" />
+                <div>
+                  <h4>Satish Patel</h4>
+                  <span>Founder & CEO, Huddle</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="user-card">
+            <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</p>
+            <div>
+              <img class="rounded-full" src="./assets/images/profile-2.jpg" width="40" height="40" alt="Bruce McKenzie" />
+              <div>
+                <h4>Bruce McKenzie</h4>
+                <span>Founder & CEO, Huddle</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="user-card">
+            <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</p>
+            <div>
+              <img class="rounded-full" src="./assets/images/profile-3.jpg" width="40" height="40" alt="" />
+              <div>
+                <h4>Iva Boyd</h4>
                 <span>Founder & CEO, Huddle</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="user-card">
-          <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has
-            become a well-oiled collaboration machine.</p>
-          <div>
-            <img class="rounded-full" src="./assets/images/profile-2.jpg" width="40" height="40" alt="Bruce McKenzie">
-            <div>
-              <h4>Bruce McKenzie</h4>
-              <span>Founder & CEO, Huddle</span>
+        <!-- get started -->
+        <div class="center-layout">
+          <div class="bg-(--navy-850) mx-auto max-w-[865px] translate-y-[50%] rounded-md px-8 py-10 text-center shadow">
+            <h3 class="text-xl font-bold">Get early access today</h3>
+            <p class="mx-auto my-4 max-w-[620px]">It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.</p>
+            <div class="relative mt-8 gap-4 max-sm:grid max-sm:gap-8 sm:flex">
+              <span id="error-message" class="text-(--red-500) pointer-events-none absolute left-8 top-[55px] hidden font-bold">Please enter a valid email address</span>
+              <input class="h-[50px] min-w-0 rounded-full bg-white px-8 text-base text-black outline-none sm:grow" type="email" id="email-input" maxlength="100" autocomplete="off" placeholder="email@example.com" />
+              <button id="sign-up-btn" class="bg-linear-to-r from-(--teal-200) to-(--cyan-500) group relative h-[50px] overflow-hidden rounded-full px-2 py-2 text-base font-bold sm:cursor-pointer sm:px-8">
+                <span class="absolute inset-0 bg-white/40 opacity-0 transition-opacity group-hover:opacity-100"></span>
+                Get Started For Free
+              </button>
             </div>
           </div>
         </div>
-
-        <div class="user-card">
-          <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has
-            become a well-oiled collaboration machine.</p>
-          <div>
-            <img class="rounded-full" src="./assets/images/profile-3.jpg" width="40" height="40" alt="">
-            <div>
-              <h4>Iva Boyd</h4>
-              <span>Founder & CEO, Huddle</span>
-            </div>
-          </div>
-        </div>
-
       </div>
+    </main>
 
-      <!-- get started -->
+    <footer class="bg-(--navy-950) pt-[250px]">
       <div class="center-layout">
-        <div class="mx-auto max-w-[865px] text-center bg-(--navy-850) px-8 py-10 rounded-md shadow translate-y-[50%]">
-          <h3 class="text-xl font-bold">Get early access today</h3>
-          <p class="my-4 max-w-[620px] mx-auto">It only takes a minute to sign up and our free starter tier is extremely
-            generous. If you have any questions, our support team would be happy to help you.</p>
-          <div class="sm:flex max-sm:grid max-sm:gap-8 gap-4 mt-8 relative">
-            <span id="error-message"
-              class="absolute top-[55px] left-8 text-(--red-500) font-bold pointer-events-none hidden">Please enter a
-              valid email address</span>
-            <input class="text-base sm:grow px-8 h-[50px] rounded-full bg-white outline-none text-black min-w-0"
-              type="email" id="email-input" maxlength="100" autocomplete="off" placeholder="email@example.com">
-            <button id="sign-up-btn"
-              class="text-base font-bold sm:cursor-pointer rounded-full sm:px-8 group relative h-[50px] overflow-hidden px-2 py-2 bg-linear-to-r from-(--teal-200) to-(--cyan-500)">
-              <span class="absolute inset-0 bg-white/40 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-              Get Started For Free
-            </button>
+        <svg class="w-(--fluid-logo)" viewBox="0 0 176 52" xmlns="http://www.w3.org/2000/svg">
+          <g fill="currentColor" fill-rule="evenodd">
+            <path
+              d="M0 16.372v.128l29.754 13.764 29.859-13.811v-.035L29.754 2.608 0 16.372zm10.727.064l19.028-8.802 19.03 8.802-19.031 8.801-19.027-8.801zM29.754 35.61L0 22.052v5.014l29.754 13.59L59.613 27.02v-5.015L29.754 35.61zm0 10.17L0 32.22v5.015l29.754 13.591L59.613 37.19v-5.014L29.754 45.78zM169.216 26.22a8.564 8.564 0 0 0-2.285-5.892 7.675 7.675 0 0 0-2.473-1.768 7.259 7.259 0 0 0-3.015-.636 7.259 7.259 0 0 0-3.015.636 7.674 7.674 0 0 0-2.473 1.768 8.565 8.565 0 0 0-2.285 5.893 8.564 8.564 0 0 0 2.285 5.893 7.674 7.674 0 0 0 2.473 1.767 7.258 7.258 0 0 0 3.015.637 7.258 7.258 0 0 0 3.015-.637 7.675 7.675 0 0 0 2.473-1.767 8.563 8.563 0 0 0 2.285-5.893zm6.784 0c0 2.044-.377 3.937-1.13 5.681a13.849 13.849 0 0 1-3.11 4.526c-1.319 1.273-2.866 2.279-4.64 3.017-1.775.739-3.667 1.108-5.677 1.108s-3.894-.37-5.653-1.108a14.659 14.659 0 0 1-4.617-3.04 14.116 14.116 0 0 1-3.11-4.55c-.753-1.744-1.13-3.622-1.13-5.633 0-1.98.385-3.842 1.154-5.586a14.718 14.718 0 0 1 3.133-4.573 14.457 14.457 0 0 1 4.617-3.064c1.759-.739 3.627-1.108 5.606-1.108 2.01 0 3.902.369 5.677 1.108 1.774.738 3.321 1.744 4.64 3.017 1.32 1.272 2.356 2.789 3.11 4.549.753 1.76 1.13 3.645 1.13 5.657zm-31.422 13.483a9.087 9.087 0 0 1-1.814.613 9.217 9.217 0 0 1-2.096.236c-1.005 0-1.971-.134-2.898-.4a6.347 6.347 0 0 1-2.426-1.297c-.69-.597-1.24-1.375-1.649-2.334-.408-.958-.612-2.113-.612-3.465V.717h6.925v31.16c0 1.132.228 1.91.683 2.334.456.425.997.637 1.625.637.786 0 1.54-.236 2.262-.707v5.562zM130.02 12.55l-12.249 32.386c-.91 2.42-2.104 4.164-3.58 5.233-1.476 1.068-3.235 1.603-5.277 1.603a8.4 8.4 0 0 1-1.036-.071 7.784 7.784 0 0 1-1.083-.212l-2.262-6.317a8.974 8.974 0 0 0 1.65.59 6.61 6.61 0 0 0 1.6.211c1.069 0 2.042-.243 2.922-.73.879-.488 1.554-1.391 2.025-2.711l.943-2.734-10.506-27.248h7.396l6.266 17.536 5.889-17.536h7.302zm-28.502-4.102H83.806v8.769h17.478v5.94H83.806v16.688h-7.16V2.179h24.873v6.27z"
+            />
+          </g>
+        </svg>
+
+        <div class="mt-8 text-base lg:grid lg:grid-flow-col">
+          <div class="flex items-start">
+            <div class="w-[35px]">
+              <img src="./assets/images/icon-location.svg" alt="location icon" />
+            </div>
+            <p class="max-w-[320px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+          </div>
+
+          <div class="[&>a]:max-w-fit [&>a]:hover:underline">
+            <a class="flex max-w-fit items-center max-lg:my-4" href="#">
+              <div class="w-[35px]">
+                <img src="./assets/images/icon-phone.svg" alt="phone icon" />
+              </div>
+              <span>+1-523-123-4567</span>
+            </a>
+            <a class="flex max-w-fit items-center" href="#">
+              <div class="w-[35px]">
+                <img src="./assets/images/icon-email.svg" alt="email icon" />
+              </div>
+              <span>example@fylo.com</span>
+            </a>
+          </div>
+
+          <div class="grid max-lg:my-8 [&>a]:max-w-fit [&>a]:hover:underline">
+            <a href="#">About Us</a>
+            <a href="#">Jobs</a>
+            <a href="#">Press</a>
+            <a href="#">Blog</a>
+          </div>
+
+          <div class="grid [&>a]:max-w-fit [&>a]:hover:underline">
+            <a href="#">Contact Us</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+          </div>
+
+          <div class="[&>div]:hover:text-(--teal-200) flex gap-4 max-lg:justify-center max-lg:py-8 lg:justify-self-end">
+            <div class="relative grid size-[30px] place-items-center overflow-hidden rounded-full border">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47062 14 5.5 16 5.5H17.5V2.1401C17.1743 2.09685 15.943 2 14.6429 2C11.9284 2 10 3.65686 10 6.69971V9.5H7V13.5H10V22H14V13.5Z"></path>
+              </svg>
+              <a href="#" class="absolute inset-0" aria-label="facebook link"></a>
+            </div>
+
+            <div class="relative grid size-[30px] place-items-center overflow-hidden rounded-full border">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path
+                  d="M22.2125 5.65605C21.4491 5.99375 20.6395 6.21555 19.8106 6.31411C20.6839 5.79132 21.3374 4.9689 21.6493 4.00005C20.8287 4.48761 19.9305 4.83077 18.9938 5.01461C18.2031 4.17106 17.098 3.69303 15.9418 3.69434C13.6326 3.69434 11.7597 5.56661 11.7597 7.87683C11.7597 8.20458 11.7973 8.52242 11.8676 8.82909C8.39047 8.65404 5.31007 6.99005 3.24678 4.45941C2.87529 5.09767 2.68005 5.82318 2.68104 6.56167C2.68104 8.01259 3.4196 9.29324 4.54149 10.043C3.87737 10.022 3.22788 9.84264 2.64718 9.51973C2.64654 9.5373 2.64654 9.55487 2.64654 9.57148C2.64654 11.5984 4.08819 13.2892 6.00199 13.6731C5.6428 13.7703 5.27232 13.8194 4.90022 13.8191C4.62997 13.8191 4.36771 13.7942 4.11279 13.7453C4.64531 15.4065 6.18886 16.6159 8.0196 16.6491C6.53813 17.8118 4.70869 18.4426 2.82543 18.4399C2.49212 18.4402 2.15909 18.4205 1.82812 18.3811C3.74004 19.6102 5.96552 20.2625 8.23842 20.2601C15.9316 20.2601 20.138 13.8875 20.138 8.36111C20.138 8.1803 20.1336 7.99886 20.1256 7.81997C20.9443 7.22845 21.651 6.49567 22.2125 5.65605Z"
+                ></path>
+              </svg>
+              <a href="#" class="absolute inset-0" aria-label="twitter link"></a>
+            </div>
+
+            <div class="relative grid size-[30px] place-items-center overflow-hidden rounded-full border">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path
+                  d="M12.001 9C10.3436 9 9.00098 10.3431 9.00098 12C9.00098 13.6573 10.3441 15 12.001 15C13.6583 15 15.001 13.6569 15.001 12C15.001 10.3427 13.6579 9 12.001 9ZM12.001 7C14.7614 7 17.001 9.2371 17.001 12C17.001 14.7605 14.7639 17 12.001 17C9.24051 17 7.00098 14.7629 7.00098 12C7.00098 9.23953 9.23808 7 12.001 7ZM18.501 6.74915C18.501 7.43926 17.9402 7.99917 17.251 7.99917C16.5609 7.99917 16.001 7.4384 16.001 6.74915C16.001 6.0599 16.5617 5.5 17.251 5.5C17.9393 5.49913 18.501 6.0599 18.501 6.74915ZM12.001 4C9.5265 4 9.12318 4.00655 7.97227 4.0578C7.18815 4.09461 6.66253 4.20007 6.17416 4.38967C5.74016 4.55799 5.42709 4.75898 5.09352 5.09255C4.75867 5.4274 4.55804 5.73963 4.3904 6.17383C4.20036 6.66332 4.09493 7.18811 4.05878 7.97115C4.00703 9.0752 4.00098 9.46105 4.00098 12C4.00098 14.4745 4.00753 14.8778 4.05877 16.0286C4.0956 16.8124 4.2012 17.3388 4.39034 17.826C4.5591 18.2606 4.7605 18.5744 5.09246 18.9064C5.42863 19.2421 5.74179 19.4434 6.17187 19.6094C6.66619 19.8005 7.19148 19.9061 7.97212 19.9422C9.07618 19.9939 9.46203 20 12.001 20C14.4755 20 14.8788 19.9934 16.0296 19.9422C16.8117 19.9055 17.3385 19.7996 17.827 19.6106C18.2604 19.4423 18.5752 19.2402 18.9074 18.9085C19.2436 18.5718 19.4445 18.2594 19.6107 17.8283C19.8013 17.3358 19.9071 16.8098 19.9432 16.0289C19.9949 14.9248 20.001 14.5389 20.001 12C20.001 9.52552 19.9944 9.12221 19.9432 7.97137C19.9064 7.18906 19.8005 6.66149 19.6113 6.17318C19.4434 5.74038 19.2417 5.42635 18.9084 5.09255C18.573 4.75715 18.2616 4.55693 17.8271 4.38942C17.338 4.19954 16.8124 4.09396 16.0298 4.05781C14.9258 4.00605 14.5399 4 12.001 4ZM12.001 2C14.7176 2 15.0568 2.01 16.1235 2.06C17.1876 2.10917 17.9135 2.2775 18.551 2.525C19.2101 2.77917 19.7668 3.1225 20.3226 3.67833C20.8776 4.23417 21.221 4.7925 21.476 5.45C21.7226 6.08667 21.891 6.81333 21.941 7.8775C21.9885 8.94417 22.001 9.28333 22.001 12C22.001 14.7167 21.991 15.0558 21.941 16.1225C21.8918 17.1867 21.7226 17.9125 21.476 18.55C21.2218 19.2092 20.8776 19.7658 20.3226 20.3217C19.7668 20.8767 19.2076 21.22 18.551 21.475C17.9135 21.7217 17.1876 21.89 16.1235 21.94C15.0568 21.9875 14.7176 22 12.001 22C9.28431 22 8.94514 21.99 7.87848 21.94C6.81431 21.8908 6.08931 21.7217 5.45098 21.475C4.79264 21.2208 4.23514 20.8767 3.67931 20.3217C3.12348 19.7658 2.78098 19.2067 2.52598 18.55C2.27848 17.9125 2.11098 17.1867 2.06098 16.1225C2.01348 15.0558 2.00098 14.7167 2.00098 12C2.00098 9.28333 2.01098 8.94417 2.06098 7.8775C2.11014 6.8125 2.27848 6.0875 2.52598 5.45C2.78014 4.79167 3.12348 4.23417 3.67931 3.67833C4.23514 3.1225 4.79348 2.78 5.45098 2.525C6.08848 2.2775 6.81348 2.11 7.87848 2.06C8.94514 2.0125 9.28431 2 12.001 2Z"
+                ></path>
+              </svg>
+              <a href="#" class="absolute inset-0" aria-label="instagram link"></a>
+            </div>
           </div>
         </div>
       </div>
 
-    </div>
-  </main>
-
-  <footer class="bg-(--navy-950) pt-[250px]">
-    <div class="center-layout">
-      <svg class="w-(--fluid-logo)" viewBox="0 0 176 52" xmlns="http://www.w3.org/2000/svg">
-        <g fill="currentColor" fill-rule="evenodd">
-          <path
-            d="M0 16.372v.128l29.754 13.764 29.859-13.811v-.035L29.754 2.608 0 16.372zm10.727.064l19.028-8.802 19.03 8.802-19.031 8.801-19.027-8.801zM29.754 35.61L0 22.052v5.014l29.754 13.59L59.613 27.02v-5.015L29.754 35.61zm0 10.17L0 32.22v5.015l29.754 13.591L59.613 37.19v-5.014L29.754 45.78zM169.216 26.22a8.564 8.564 0 0 0-2.285-5.892 7.675 7.675 0 0 0-2.473-1.768 7.259 7.259 0 0 0-3.015-.636 7.259 7.259 0 0 0-3.015.636 7.674 7.674 0 0 0-2.473 1.768 8.565 8.565 0 0 0-2.285 5.893 8.564 8.564 0 0 0 2.285 5.893 7.674 7.674 0 0 0 2.473 1.767 7.258 7.258 0 0 0 3.015.637 7.258 7.258 0 0 0 3.015-.637 7.675 7.675 0 0 0 2.473-1.767 8.563 8.563 0 0 0 2.285-5.893zm6.784 0c0 2.044-.377 3.937-1.13 5.681a13.849 13.849 0 0 1-3.11 4.526c-1.319 1.273-2.866 2.279-4.64 3.017-1.775.739-3.667 1.108-5.677 1.108s-3.894-.37-5.653-1.108a14.659 14.659 0 0 1-4.617-3.04 14.116 14.116 0 0 1-3.11-4.55c-.753-1.744-1.13-3.622-1.13-5.633 0-1.98.385-3.842 1.154-5.586a14.718 14.718 0 0 1 3.133-4.573 14.457 14.457 0 0 1 4.617-3.064c1.759-.739 3.627-1.108 5.606-1.108 2.01 0 3.902.369 5.677 1.108 1.774.738 3.321 1.744 4.64 3.017 1.32 1.272 2.356 2.789 3.11 4.549.753 1.76 1.13 3.645 1.13 5.657zm-31.422 13.483a9.087 9.087 0 0 1-1.814.613 9.217 9.217 0 0 1-2.096.236c-1.005 0-1.971-.134-2.898-.4a6.347 6.347 0 0 1-2.426-1.297c-.69-.597-1.24-1.375-1.649-2.334-.408-.958-.612-2.113-.612-3.465V.717h6.925v31.16c0 1.132.228 1.91.683 2.334.456.425.997.637 1.625.637.786 0 1.54-.236 2.262-.707v5.562zM130.02 12.55l-12.249 32.386c-.91 2.42-2.104 4.164-3.58 5.233-1.476 1.068-3.235 1.603-5.277 1.603a8.4 8.4 0 0 1-1.036-.071 7.784 7.784 0 0 1-1.083-.212l-2.262-6.317a8.974 8.974 0 0 0 1.65.59 6.61 6.61 0 0 0 1.6.211c1.069 0 2.042-.243 2.922-.73.879-.488 1.554-1.391 2.025-2.711l.943-2.734-10.506-27.248h7.396l6.266 17.536 5.889-17.536h7.302zm-28.502-4.102H83.806v8.769h17.478v5.94H83.806v16.688h-7.16V2.179h24.873v6.27z" />
-        </g>
-      </svg>
-
-      <div class="mt-8 text-base lg:grid lg:grid-flow-col">
-        <div class="flex items-start">
-          <div class="w-[35px]">
-            <img src="./assets/images/icon-location.svg" alt="location icon">
-          </div>
-          <p class="max-w-[320px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua</p>
-        </div>
-
-        <div class="[&>a]:hover:underline [&>a]:max-w-fit">
-          <a class="flex items-center max-w-fit max-lg:my-4" href="#">
-            <div class="w-[35px]">
-              <img src="./assets/images/icon-phone.svg" alt="phone icon">
-            </div>
-            <span>+1-523-123-4567</span>
-          </a>
-          <a class="flex items-center max-w-fit" href="#">
-            <div class="w-[35px]">
-              <img src="./assets/images/icon-email.svg" alt="email icon">
-            </div>
-            <span>example@fylo.com</span>
-          </a>
-        </div>
-
-        <div class="grid max-lg:my-8 [&>a]:hover:underline [&>a]:max-w-fit">
-          <a href="#">About Us</a>
-          <a href="#">Jobs</a>
-          <a href="#">Press</a>
-          <a href="#">Blog</a>
-        </div>
-
-        <div class="grid [&>a]:hover:underline [&>a]:max-w-fit">
-          <a href="#">Contact Us</a>
-          <a href="#">Terms</a>
-          <a href="#">Privacy</a>
-        </div>
-
-        <div
-          class="lg:justify-self-end max-lg:py-8 flex max-lg:justify-center gap-4 [&>div]:hover:text-(--teal-200)">
-          <div class="relative size-[30px] border grid place-items-center rounded-full overflow-hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-              <path
-                d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47062 14 5.5 16 5.5H17.5V2.1401C17.1743 2.09685 15.943 2 14.6429 2C11.9284 2 10 3.65686 10 6.69971V9.5H7V13.5H10V22H14V13.5Z">
-              </path>
-            </svg>
-            <a href="#" class="absolute inset-0" aria-label="facebook link"></a>
-          </div>
-
-          <div class="relative size-[30px] border grid place-items-center rounded-full overflow-hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-              <path
-                d="M22.2125 5.65605C21.4491 5.99375 20.6395 6.21555 19.8106 6.31411C20.6839 5.79132 21.3374 4.9689 21.6493 4.00005C20.8287 4.48761 19.9305 4.83077 18.9938 5.01461C18.2031 4.17106 17.098 3.69303 15.9418 3.69434C13.6326 3.69434 11.7597 5.56661 11.7597 7.87683C11.7597 8.20458 11.7973 8.52242 11.8676 8.82909C8.39047 8.65404 5.31007 6.99005 3.24678 4.45941C2.87529 5.09767 2.68005 5.82318 2.68104 6.56167C2.68104 8.01259 3.4196 9.29324 4.54149 10.043C3.87737 10.022 3.22788 9.84264 2.64718 9.51973C2.64654 9.5373 2.64654 9.55487 2.64654 9.57148C2.64654 11.5984 4.08819 13.2892 6.00199 13.6731C5.6428 13.7703 5.27232 13.8194 4.90022 13.8191C4.62997 13.8191 4.36771 13.7942 4.11279 13.7453C4.64531 15.4065 6.18886 16.6159 8.0196 16.6491C6.53813 17.8118 4.70869 18.4426 2.82543 18.4399C2.49212 18.4402 2.15909 18.4205 1.82812 18.3811C3.74004 19.6102 5.96552 20.2625 8.23842 20.2601C15.9316 20.2601 20.138 13.8875 20.138 8.36111C20.138 8.1803 20.1336 7.99886 20.1256 7.81997C20.9443 7.22845 21.651 6.49567 22.2125 5.65605Z">
-              </path>
-            </svg>
-            <a href="#" class="absolute inset-0" aria-label="twitter link"></a>
-          </div>
-
-          <div class="relative size-[30px] border grid place-items-center rounded-full overflow-hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-              <path
-                d="M12.001 9C10.3436 9 9.00098 10.3431 9.00098 12C9.00098 13.6573 10.3441 15 12.001 15C13.6583 15 15.001 13.6569 15.001 12C15.001 10.3427 13.6579 9 12.001 9ZM12.001 7C14.7614 7 17.001 9.2371 17.001 12C17.001 14.7605 14.7639 17 12.001 17C9.24051 17 7.00098 14.7629 7.00098 12C7.00098 9.23953 9.23808 7 12.001 7ZM18.501 6.74915C18.501 7.43926 17.9402 7.99917 17.251 7.99917C16.5609 7.99917 16.001 7.4384 16.001 6.74915C16.001 6.0599 16.5617 5.5 17.251 5.5C17.9393 5.49913 18.501 6.0599 18.501 6.74915ZM12.001 4C9.5265 4 9.12318 4.00655 7.97227 4.0578C7.18815 4.09461 6.66253 4.20007 6.17416 4.38967C5.74016 4.55799 5.42709 4.75898 5.09352 5.09255C4.75867 5.4274 4.55804 5.73963 4.3904 6.17383C4.20036 6.66332 4.09493 7.18811 4.05878 7.97115C4.00703 9.0752 4.00098 9.46105 4.00098 12C4.00098 14.4745 4.00753 14.8778 4.05877 16.0286C4.0956 16.8124 4.2012 17.3388 4.39034 17.826C4.5591 18.2606 4.7605 18.5744 5.09246 18.9064C5.42863 19.2421 5.74179 19.4434 6.17187 19.6094C6.66619 19.8005 7.19148 19.9061 7.97212 19.9422C9.07618 19.9939 9.46203 20 12.001 20C14.4755 20 14.8788 19.9934 16.0296 19.9422C16.8117 19.9055 17.3385 19.7996 17.827 19.6106C18.2604 19.4423 18.5752 19.2402 18.9074 18.9085C19.2436 18.5718 19.4445 18.2594 19.6107 17.8283C19.8013 17.3358 19.9071 16.8098 19.9432 16.0289C19.9949 14.9248 20.001 14.5389 20.001 12C20.001 9.52552 19.9944 9.12221 19.9432 7.97137C19.9064 7.18906 19.8005 6.66149 19.6113 6.17318C19.4434 5.74038 19.2417 5.42635 18.9084 5.09255C18.573 4.75715 18.2616 4.55693 17.8271 4.38942C17.338 4.19954 16.8124 4.09396 16.0298 4.05781C14.9258 4.00605 14.5399 4 12.001 4ZM12.001 2C14.7176 2 15.0568 2.01 16.1235 2.06C17.1876 2.10917 17.9135 2.2775 18.551 2.525C19.2101 2.77917 19.7668 3.1225 20.3226 3.67833C20.8776 4.23417 21.221 4.7925 21.476 5.45C21.7226 6.08667 21.891 6.81333 21.941 7.8775C21.9885 8.94417 22.001 9.28333 22.001 12C22.001 14.7167 21.991 15.0558 21.941 16.1225C21.8918 17.1867 21.7226 17.9125 21.476 18.55C21.2218 19.2092 20.8776 19.7658 20.3226 20.3217C19.7668 20.8767 19.2076 21.22 18.551 21.475C17.9135 21.7217 17.1876 21.89 16.1235 21.94C15.0568 21.9875 14.7176 22 12.001 22C9.28431 22 8.94514 21.99 7.87848 21.94C6.81431 21.8908 6.08931 21.7217 5.45098 21.475C4.79264 21.2208 4.23514 20.8767 3.67931 20.3217C3.12348 19.7658 2.78098 19.2067 2.52598 18.55C2.27848 17.9125 2.11098 17.1867 2.06098 16.1225C2.01348 15.0558 2.00098 14.7167 2.00098 12C2.00098 9.28333 2.01098 8.94417 2.06098 7.8775C2.11014 6.8125 2.27848 6.0875 2.52598 5.45C2.78014 4.79167 3.12348 4.23417 3.67931 3.67833C4.23514 3.1225 4.79348 2.78 5.45098 2.525C6.08848 2.2775 6.81348 2.11 7.87848 2.06C8.94514 2.0125 9.28431 2 12.001 2Z">
-              </path>
-            </svg>
-            <a href="#" class="absolute inset-0" aria-label="instagram link"></a>
-          </div>
-        </div>
-
-
+      <div class="center-layout pb-[50px] pt-[100px]">
+        <p class="text-center text-base text-gray-300">Challenge by <a class="font-bold text-white hover:underline" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a class="font-bold text-white hover:underline" href="https://github.com/riyad-96" target="_blank">Riyad</a>.</p>
       </div>
-    </div>
-
-    <div class="center-layout pt-[100px] pb-[50px]">
-      <p class="text-base text-center text-gray-300">
-        Challenge by <a class="text-white font-bold hover:underline" href="https://www.frontendmentor.io?ref=challenge"
-          target="_blank">Frontend Mentor</a>.
-        Coded by <a class="text-white font-bold hover:underline" href="https://github.com/riyad-96"
-          target="_blank">Riyad</a>.
-      </p>
-    </div>
-  </footer>
-</body>
-
+    </footer>
+  </body>
 </html>
